@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: earth-app
 spec:
+  ype: LoadBalancer
   selector:
     app: myapp
   ports:
