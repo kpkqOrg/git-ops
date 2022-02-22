@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: earth-app
+spec:
+  selector:
+    matchLabels:
+      app: earth-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: earth-app
+    spec:
+      containers:
+      - name: earth-app
+        image: us.gcr.io/handy-geography-341716/earth-web-app:1.0
+        ports:
+        - containerPort: 8080
