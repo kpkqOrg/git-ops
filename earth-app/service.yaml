@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: earth-app
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: myapp
   ports:
