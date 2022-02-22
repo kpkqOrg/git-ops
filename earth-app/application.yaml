@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/kpkqOrg/git-ops.git
     targetRevision: HEAD
-    path: eart-app
+    path: earth-app
   destination: 
     server: https://kubernetes.default.svc
     namespace: earth-app
