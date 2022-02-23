@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: earth-app
+  name: earth-app-deployment
 spec:
   selector:
     matchLabels:
