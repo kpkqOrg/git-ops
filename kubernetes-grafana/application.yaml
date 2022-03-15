@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: monitoring
+  name: kubernetes-grafana
   namespace: argocd
 spec:
   project: default
@@ -9,15 +9,14 @@ spec:
   source:
     repoURL: https://github.com/kpkqOrg/git-ops.git
     targetRevision: HEAD
-    path: monitoring
+    path: kubernetes-grafana
   destination: 
     server: https://kubernetes.default.svc
-    namespace: monitoring
+    namespace: kubernetes-grafana
 
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
-    - Replace=true
 
     automated:
       selfHeal: true
