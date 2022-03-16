@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubernetes-grafana
+  name: mongo-app
   namespace: argocd
 spec:
   project: default
@@ -9,10 +9,10 @@ spec:
   source:
     repoURL: https://github.com/kpkqOrg/git-ops.git
     targetRevision: HEAD
-    path: kubernetes-grafana
+    path: mongo-app
   destination: 
     server: https://kubernetes.default.svc
-    namespace: kubernetes-grafana
+    namespace: mongo-app
 
   syncPolicy:
     syncOptions:
