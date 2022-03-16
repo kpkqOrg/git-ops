@@ -1,21 +1,31 @@
 apiVersion: v2
-name: kube-state-metrics
-description: Install kube-state-metrics to generate and expose cluster-level metrics
-keywords:
-- metric
-- monitoring
-- prometheus
-- kubernetes
-type: application
-version: 4.7.0
-appVersion: 2.4.1
-home: https://github.com/kubernetes/kube-state-metrics/
+name: prometheus
+appVersion: 2.31.1
+version: 15.5.3
+description: Prometheus is a monitoring system and time series database.
+home: https://prometheus.io/
+icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
 sources:
-- https://github.com/kubernetes/kube-state-metrics/
+  - https://github.com/prometheus/alertmanager
+  - https://github.com/prometheus/prometheus
+  - https://github.com/prometheus/pushgateway
+  - https://github.com/prometheus/node_exporter
+  - https://github.com/kubernetes/kube-state-metrics
 maintainers:
-- name: tariq1890
-  email: tariq.ibrahim@mulesoft.com
-- name: mrueg
-  email: manuel@rueg.eu
-- name: dotdc
-  email: davidcalvertfr@gmail.com
+  - name: gianrubio
+    email: gianrubio@gmail.com
+  - name: zanhsieh
+    email: zanhsieh@gmail.com
+  - name: Xtigyro
+    email: miroslav.hadzhiev@gmail.com
+  - name: monotek
+    email: monotek23@gmail.com
+  - name: naseemkullah
+    email: naseem@transit.app
+engine: gotpl
+type: application
+dependencies:
+  - name: kube-state-metrics
+    version: "4.4.*"
+    repository: https://prometheus-community.github.io/helm-charts
+    condition: kubeStateMetrics.enabled
